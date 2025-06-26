@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+audio {
+  display: none;
+}
+
+.klavish {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+  align-items: center;
+  background: grey;
+}
+
+.cart-klavish {
+  text-align: center;
+  align-content: center;
+  font-family: sans-serif;
+  font-size: 33px;
+  width: 200px;
+  height: 200px;
+  border-radius: 5px;
+  background: silver;
+  color: white;
+  margin-top: 50px;
+  transition: .7s;
+  cursor: pointer;
+}
+
+.cart-klavish:hover {
+  background: #f5f5f5;
+  color: black;
+}
