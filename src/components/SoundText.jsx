@@ -48,7 +48,7 @@ function SoundText() {
           <div key={i} className="klavish-row">
             {row.map((item, index) => (
               <div key={index} className="cart-klavish">
-                <h1 className="klavish-text">{item.key}{item.note}</h1>
+                <h1 className="klavish-text">{item.key}</h1>
               </div>
             ))}
           </div>
