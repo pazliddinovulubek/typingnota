@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Data from '../static/Data/Data';
+import Data from '../static/Data';
 import '../style/Sound.css';
 
 function SoundText() {
