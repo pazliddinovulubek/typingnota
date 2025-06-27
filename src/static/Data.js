@@ -2,12 +2,12 @@
 const Data = {
 
   row1: [
-    { key: "Q", note: "Si", sound: "../public/audio/B2.mp3" },
-    { key: "W", note: "Si", sound: "/audio/B2.mp3" },
-    { key: "E", note: "Si", sound: "/audio/B3.mp3" },
-    { key: "R", note: "Si", sound: "/audio/B4.mp3" },
-    { key: "T", note: "Si", sound: "/audio/B5.mp3" },
-    { key: "Y", note: "Si", sound: "/audio/B7.mp3" },
+    { key: "Q", note: "Si", sound: "/audio/B0.mp3" },
+    { key: "W", note: "Si", sound: "/audio/B1.mp3" },
+    { key: "E", note: "Si", sound: "/audio/B2.mp3" },
+    { key: "R", note: "Si", sound: "/audio/B3.mp3" },
+    { key: "T", note: "Si", sound: "/audio/B4.mp3" },
+    { key: "Y", note: "Si", sound: "/audio/B5.mp3" },
     { key: "U", note: "Si", sound: "/audio/Bb0.mp3" },
     { key: "I", note: "Si", sound: "/audio/Bb1.mp3" },
     { key: "O", note: "Si", sound: "/audio/Bb2.mp3" },
