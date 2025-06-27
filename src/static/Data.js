@@ -2,7 +2,7 @@
 const Data = {
 
   row1: [
-    { key: "Q", note: "Si", sound: "../public/Audio/B2.mp3" },
+    { key: "Q", note: "Si", sound: "../public/audio/B2.mp3" },
     { key: "W", note: "Si", sound: "/audio/B2.mp3" },
     { key: "E", note: "Si", sound: "/audio/B3.mp3" },
     { key: "R", note: "Si", sound: "/audio/B4.mp3" },
