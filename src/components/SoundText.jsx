@@ -7,7 +7,7 @@ function SoundText() {
 
   useEffect(() => {
     const handle = (e) => {
-      const key = e.key.toLowerCase(); // klavisha harfi
+      const key = e.key.toLowerCase();
       const allKeys = [...Data.row1, ...Data.row2, ...Data.row3];
 
       if (e.key === 'Backspace') {
@@ -21,10 +21,10 @@ function SoundText() {
       }
 
       if (e.key.length === 1) {
-        const Nota = allKeys.find(item => item.key === key);
+        const Nota = allKeys.find(item => item.key.toLowerCase() === key);
         if (Nota) {
           const audio = new Audio(Nota.sound);
-          audio.play();
+          audio.play().catch(e => console.log("Audio error:", e));
         }
         setText(prev => prev + key);
       }
@@ -39,7 +39,7 @@ function SoundText() {
       <div className="text-cart">
         <h1 className='text-main'>
           {text}
-          <span className="cursor">|</span>
+          <span className="flying-cursor">|</span>
         </h1>
       </div>
 
@@ -48,7 +48,7 @@ function SoundText() {
           <div key={i} className="klavish-row">
             {row.map((item, index) => (
               <div key={index} className="cart-klavish">
-                <h1 className="klavish-text">{item.key}</h1>
+                <h1 className="klavish-text">{item.key}{item.note}</h1>
               </div>
             ))}
           </div>
