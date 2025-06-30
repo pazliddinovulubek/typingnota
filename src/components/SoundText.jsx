@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Data from '../static/Data';
 import '../style/Sound.css';
 
@@ -16,42 +16,40 @@ function SoundText() {
     }
   };
 
-  useEffect(() => {
-    const handleKeyDown = (e) => {
-      const key = e.key;
+  const handleKeyDown = (e) => {
+    const key = e.key;
 
-      if (key === 'Backspace') {
-        setText(prev => prev.slice(0, -1));
-        return;
-      }
+    if (key === 'Backspace' || key === 'Delete') {
+      // faqat activeKey uchun ishlatamiz
+      setActiveKey(null);
+      return;
+    }
 
-      if (key === ' ') {
-        setText(prev => prev + ' ');
-        playSound(' ');
-        setActiveKey(' ');
-        setTimeout(() => setActiveKey(null), 200);
-        return;
-      }
+    if (key === ' ') {
+      playSound(' ');
+      setActiveKey(' ');
+      setTimeout(() => setActiveKey(null), 200);
+      return;
+    }
 
-      if (key.length === 1) {
-        setText(prev => prev + key);
-        playSound(key);
-        setActiveKey(key.toLowerCase());
-        setTimeout(() => setActiveKey(null), 200);
-      }
-    };
-
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, []);
+    if (key.length === 1) {
+      playSound(key);
+      setActiveKey(key.toLowerCase());
+      setTimeout(() => setActiveKey(null), 200);
+    }
+  };
 
   return (
     <div>
       <div className="text-cart">
-        <h1 className="text-main">
-          {text}
-          <span className="flying-cursor">|</span>
-        </h1>
+        <textarea
+          className="text-main input-box"
+          value={text}
+          onChange={(e) => setText(e.target.value)} 
+          onKeyDown={handleKeyDown} 
+          placeholder="Yozing..."
+        />
+        <span className="flying-cursor">|</span>
       </div>
 
       <div className="klavish-container">

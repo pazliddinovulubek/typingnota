@@ -91,6 +91,7 @@ audio {
   border: none;
   outline: none;
   color: white;
+  font-size: 22px;
 }
 
 .klavish-text {
@@ -119,13 +120,29 @@ audio {
 }
 
 
-/* 🧠 Mobilda hech narsa ko‘rinmaydi (na yozish joyi, na klavishalar) */
 @media (max-width: 400px) {
-  .text-cart {
+  .klavish-container {
     display: none;
   }
 
-  .klavish-container {
+  .text-main {
+    width: 100%;
+    height: 200px;
+    font-size: 16px;
+  }
+
+  .text-cart {
+    width: 350px;
+    height: auto;
+    padding: 10px;
+  }
+
+  .input-box {
+    width: 100%;
+    height: 180px;
+    font-size: 16px;
+  }
+  .flying-cursor{
     display: none;
   }
 }
