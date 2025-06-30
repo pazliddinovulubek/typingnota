@@ -15,10 +15,7 @@ audio {
   flex-direction: column;
   gap: 15px;
   align-items: center;
-  margin-top: 50px;
-  position: absolute;
-  bottom: 20px;
-  left: 71px;
+  margin-top: 20px;
 }
 
 .klavish-row {
@@ -56,9 +53,16 @@ audio {
   border-radius: 8px;
   cursor: pointer;
   animation: rainbowBackground 3s linear infinite;
-  transition: background-color 0.5s ease;
+  transition: background-color 0.2s ease, color 0.2s ease;
   box-shadow: 0 10px 20px rgba(0, 0, 255, 0.5);
 }
+
+.cart-klavish.active {
+  animation: none;
+  background-color: red;
+  color: white;
+}
+
 
 
 .text-cart {
@@ -66,8 +70,6 @@ audio {
   height: 370px;
   justify-content: center;
   margin: auto;
-  position: absolute;
-  left: 71px;
   overflow: auto;
   padding: 10px;
   background: rgba(255, 255, 255, 0.1);
@@ -91,11 +93,8 @@ audio {
 }
 
 .klavish-text {
-  padding: 10px;
-  border-radius: 5px;
-  animation: rainbowBackground 3s linear infinite;
+  background: none;
   color: white;
-  font-weight: bold;
 }
 
 .flying-cursor {
@@ -116,4 +115,28 @@ audio {
     opacity: 0.3;
     background: green;
   }
+}
+
+
+@media (max-width:400px) {
+  .text-cart {
+    width: 350px;
+    height: 200px;
+  }
+
+  .klavish-container {
+    margin: auto;
+    margin-top: 40px;
+    width: 350px;
+  }
+
+  .cart-klavish {
+    width: 30px;
+    height: 30px;
+  }
+  .cart-klavish{
+    font-size: 12px;
+    border-radius: 2px;
+  }
+
 }
