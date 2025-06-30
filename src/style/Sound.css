@@ -63,8 +63,6 @@ audio {
   color: white;
 }
 
-
-
 .text-cart {
   width: 1393px;
   height: 370px;
@@ -90,6 +88,9 @@ audio {
   font-size: 18px;
   font-weight: 400;
   font-family: sans-serif;
+  border: none;
+  outline: none;
+  color: white;
 }
 
 .klavish-text {
@@ -118,7 +119,6 @@ audio {
 }
 
 
-/* 🧠 Faqat katta ekranlarda klaviatura ko'rinadi */
 @media (max-width: 400px) {
   .klavish-container {
     display: none;

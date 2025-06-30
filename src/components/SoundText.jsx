@@ -16,35 +16,28 @@ function SoundText() {
     }
   };
 
-  const handleInput = (e) => {
-    const char = e.nativeEvent.data;
-    if (char && char.length === 1) {
-      setText(prev => prev + char);
-      playSound(char);
-      setActiveKey(char.toLowerCase());
-      setTimeout(() => setActiveKey(null), 300);
-    }
-  };
-
   useEffect(() => {
     const handleKeyDown = (e) => {
-      const key = e.key.toLowerCase();
-      if (key.length === 1) {
-        const nota = allKeys.find(item => item.key.toLowerCase() === key);
-        if (nota) {
-          setText(prev => prev + key);
-          playSound(key);
-          setActiveKey(key);
-          setTimeout(() => setActiveKey(null), 300);
-        }
-      }
+      const key = e.key;
 
-      if (e.key === 'Backspace') {
+      if (key === 'Backspace') {
         setText(prev => prev.slice(0, -1));
+        return;
       }
 
-      if (e.key === ' ') {
+      if (key === ' ') {
         setText(prev => prev + ' ');
+        playSound(' ');
+        setActiveKey(' ');
+        setTimeout(() => setActiveKey(null), 200);
+        return;
+      }
+
+      if (key.length === 1) {
+        setText(prev => prev + key);
+        playSound(key);
+        setActiveKey(key.toLowerCase());
+        setTimeout(() => setActiveKey(null), 200);
       }
     };
 
@@ -55,14 +48,10 @@ function SoundText() {
   return (
     <div>
       <div className="text-cart">
-        <textarea
-          className="text-main input-box"
-          value={text}
-          onChange={(e) => setText(e.target.value)}
-          onInput={handleInput}
-          placeholder="Yozing..."
-        />
-        <span className="flying-cursor">|</span>
+        <h1 className="text-main">
+          {text}
+          <span className="flying-cursor">|</span>
+        </h1>
       </div>
 
       <div className="klavish-container">
@@ -71,9 +60,7 @@ function SoundText() {
             {row.map((item, keyIndex) => (
               <div
                 key={keyIndex}
-                className={`cart-klavish ${
-                  activeKey === item.key.toLowerCase() ? 'active' : ''
-                }`}
+                className={`cart-klavish ${activeKey === item.key.toLowerCase() ? 'active' : ''}`}
               >
                 <h1 className="klavish-text">{item.key}</h1>
               </div>
