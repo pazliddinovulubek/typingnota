@@ -18,14 +18,12 @@ function SoundText() {
   };
 
   useEffect(() => {
-    // Detect if mobile
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 400);
     };
     handleResize();
     window.addEventListener('resize', handleResize);
 
-    // Key event (only on desktop)
     const handleKeyDown = (e) => {
       if (window.innerWidth <= 400) return;
 

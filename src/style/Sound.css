@@ -94,7 +94,7 @@ audio {
   border: none;
   outline: none;
   resize: none;
-  display: none; /* Default: hidden, mobileda ko'rinadi */
+  display: none; 
 }
 
 .flying-cursor {
